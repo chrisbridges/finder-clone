@@ -14,6 +14,7 @@ This is a mockup of what the tag picker will look like:
 - When a tag is clicked, it should be selected (via checkbox)
 - When a folder is clicked, it should be navigated into
 - Display what tags are currently selected (via checkbox)
+- Tag selection should persist as folders are navigated in and out of
 - Always display folders above tags.
 - Always display folders and tags sorted alphanumeric by name.
 - Only display 'back' button if you are not at the 'Root Level'
@@ -42,7 +43,7 @@ Each item in this list contains the folowing props:
 | _id       | String  | Alphanumeric ID, represents the unique tag or folder.                                                           |
 | name      | String  | Represents the Tag or Folder                                                                                    |
 | isFolder  | Boolean | If true, means Tag is a Folder of Tags.                                                                         |
-| parent    | String  | If null, means Tag or Folder is at 'Root Level'. If present, identifies the direct parent of the tag or folder. |
+| parent    | String  | If null, means Tag or Folder is at 'Root Level'. If present, identifies the id of the direct parent of the tag or folder. |
 | ancestors | Array   | List of direct ancestors (including Parent)                                                                     |
   
   
