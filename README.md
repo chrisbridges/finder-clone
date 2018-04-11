@@ -11,7 +11,7 @@ Build a "Tag Picker" react component that displays a list of tags and folders, a
 - Always display folders above tags.
 - Always display folders and tags sorted alphanumeric by name.
 - Only display 'back' button if you are not at the 'Root Level'.
-- `onTagSelected()` prop should be called each time a tag is selected/deselected, with the most up-to-date list of selected tagIds as the single argument. (this callback would be used to ultimatly update the incoming list of 'Selected Tags').
+- `onTagSelected()` prop should be called each time a tag is selected/deselected, with the most up-to-date list of selected tagIds as the single argument. (this callback would be used to ultimately update the incoming list of 'Selected Tags').
 - A parent component would handle receiving the list of updated tag-ids, and echoing the list back into the component.
 - The provided `tags.json` example can be used as the list of all available tags/folders (used as input into the `tags[]` prop)
 
