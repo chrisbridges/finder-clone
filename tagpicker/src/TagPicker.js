@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class TagPicker extends Component {
-  
+export default function TagPicker(props) {
 
-  render() {
-    return (
-      <div className="tag-picker">
-        
-      </div>
-    )
-  }
+  const displayTags = props.tags.map(tag => {
+    return <li key={tag._id} onClick={() => props.onTagSelectionChange(tag._id)}>{tag.name}</li>
+  });
+
+  return (
+    <div className="tag-picker">
+      <ul>{displayTags}</ul>
+    </div>
+  );
 }
 
-export default TagPicker;
