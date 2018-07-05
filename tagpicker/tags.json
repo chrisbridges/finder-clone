@@ -1,0 +1,245 @@
+[  
+   {  
+      "_id": "5ace4c99bfbcb25277a2e837",
+      "name": "Folder A",
+      "isFolder": true,
+      "parent": null,
+      "ancestors": []
+   },
+   {  
+      "_id": "5ace4c9ebfbcb25277a2e838",
+      "name": "Folder B",
+      "isFolder": true,
+      "parent": null,
+      "ancestors": []
+   },
+   {  
+      "_id": "5ace4ca2bfbcb25277a2e839",
+      "name": "Folder C",
+      "isFolder": true,
+      "parent": null,
+      "ancestors": []
+   },
+   {  
+      "_id": "5ace4ca8bfbcb25277a2e83a",
+      "name": "Folder D",
+      "isFolder": true,
+      "parent": null,
+      "ancestors": []
+   },
+   {  
+      "_id": "5ace4cbbbfbcb25277a2e83b",
+      "name": "Tag 1",
+      "isFolder": false,
+      "parent": null,
+      "ancestors": []
+   },
+   {  
+      "_id": "5ace4cc2bfbcb25277a2e83c",
+      "name": "Tag 2",
+      "isFolder": false,
+      "parent": null,
+      "ancestors": []
+   },
+   {  
+      "_id": "5ace4cc5bfbcb25277a2e83d",
+      "name": "Tag 3",
+      "isFolder": false,
+      "parent": null,
+      "ancestors": []
+   },
+   {  
+      "_id": "5ace4cd4bfbcb25277a2e83e",
+      "name": "Folder A.1",
+      "isFolder": true,
+      "parent": "5ace4c99bfbcb25277a2e837",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837"
+      ]
+   },
+   {  
+      "_id": "5ace4cd8bfbcb25277a2e83f",
+      "name": "Folder A.2",
+      "isFolder": true,
+      "parent": "5ace4c99bfbcb25277a2e837",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837"
+      ]
+   },
+   {  
+      "_id": "5ace4ce1bfbcb25277a2e840",
+      "name": "Tag A.1",
+      "isFolder": false,
+      "parent": "5ace4c99bfbcb25277a2e837",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837"
+      ]
+   },
+   {  
+      "_id": "5ace4ce5bfbcb25277a2e841",
+      "name": "Tag A.2",
+      "isFolder": false,
+      "parent": "5ace4c99bfbcb25277a2e837",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837"
+      ]
+   },
+   {  
+      "_id": "5ace4cedbfbcb25277a2e842",
+      "name": "Folder A.1.1",
+      "isFolder": true,
+      "parent": "5ace4cd4bfbcb25277a2e83e",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837",
+         "5ace4cd4bfbcb25277a2e83e"
+      ]
+   },
+   {  
+      "_id": "5ace4cf3bfbcb25277a2e843",
+      "name": "Tag A.1.1",
+      "isFolder": false,
+      "parent": "5ace4cd4bfbcb25277a2e83e",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837",
+         "5ace4cd4bfbcb25277a2e83e"
+      ]
+   },
+   {  
+      "_id": "5ace4cf8bfbcb25277a2e844",
+      "name": "Tag A.1.2",
+      "isFolder": false,
+      "parent": "5ace4cd4bfbcb25277a2e83e",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837",
+         "5ace4cd4bfbcb25277a2e83e"
+      ]
+   },
+   {  
+      "_id": "5ace4d03bfbcb25277a2e845",
+      "name": "Tag A.1.1.1",
+      "isFolder": false,
+      "parent": "5ace4cedbfbcb25277a2e842",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837",
+         "5ace4cd4bfbcb25277a2e83e",
+         "5ace4cedbfbcb25277a2e842"
+      ]
+   },
+   {  
+      "_id": "5ace4d07bfbcb25277a2e846",
+      "name": "Tag A.1.1.2",
+      "isFolder": false,
+      "parent": "5ace4cedbfbcb25277a2e842",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837",
+         "5ace4cd4bfbcb25277a2e83e",
+         "5ace4cedbfbcb25277a2e842"
+      ]
+   },
+   {  
+      "_id": "5ace4d0bbfbcb25277a2e847",
+      "name": "Tag A.1.1.3",
+      "isFolder": false,
+      "parent": "5ace4cedbfbcb25277a2e842",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837",
+         "5ace4cd4bfbcb25277a2e83e",
+         "5ace4cedbfbcb25277a2e842"
+      ]
+   },
+   {  
+      "_id": "5ace4d1dbfbcb25277a2e848",
+      "name": "Tag A.2.1",
+      "isFolder": false,
+      "parent": "5ace4cd8bfbcb25277a2e83f",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837",
+         "5ace4cd8bfbcb25277a2e83f"
+      ]
+   },
+   {  
+      "_id": "5ace4d28bfbcb25277a2e849",
+      "name": "Tag A.2.2",
+      "isFolder": false,
+      "parent": "5ace4cd8bfbcb25277a2e83f",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837",
+         "5ace4cd8bfbcb25277a2e83f"
+      ]
+   },
+   {  
+      "_id": "5ace4d2bbfbcb25277a2e84a",
+      "name": "Tag A.2.3",
+      "isFolder": false,
+      "parent": "5ace4cd8bfbcb25277a2e83f",
+      "ancestors": [  
+         "5ace4c99bfbcb25277a2e837",
+         "5ace4cd8bfbcb25277a2e83f"
+      ]
+   },
+   {  
+      "_id": "5ace4d34bfbcb25277a2e84b",
+      "name": "Tag B.1",
+      "isFolder": false,
+      "parent": "5ace4c9ebfbcb25277a2e838",
+      "ancestors": [  
+         "5ace4c9ebfbcb25277a2e838"
+      ]
+   },
+   {  
+      "_id": "5ace4d38bfbcb25277a2e84c",
+      "name": "Tag B.2",
+      "isFolder": false,
+      "parent": "5ace4c9ebfbcb25277a2e838",
+      "ancestors": [  
+         "5ace4c9ebfbcb25277a2e838"
+      ]
+   },
+   {  
+      "_id": "5ace4d3ebfbcb25277a2e84d",
+      "name": "Tag B.3",
+      "isFolder": false,
+      "parent": "5ace4c9ebfbcb25277a2e838",
+      "ancestors": [  
+         "5ace4c9ebfbcb25277a2e838"
+      ]
+   },
+   {  
+      "_id": "5ace4d4abfbcb25277a2e84e",
+      "name": "Folder D.1",
+      "isFolder": true,
+      "parent": "5ace4ca8bfbcb25277a2e83a",
+      "ancestors": [  
+         "5ace4ca8bfbcb25277a2e83a"
+      ]
+   },
+   {  
+      "_id": "5ace4d4ebfbcb25277a2e84f",
+      "name": "Tag D.1",
+      "isFolder": false,
+      "parent": "5ace4ca8bfbcb25277a2e83a",
+      "ancestors": [  
+         "5ace4ca8bfbcb25277a2e83a"
+      ]
+   },
+   {  
+      "_id": "5ace4d54bfbcb25277a2e850",
+      "name": "Folder D.1.1",
+      "isFolder": true,
+      "parent": "5ace4d4abfbcb25277a2e84e",
+      "ancestors": [  
+         "5ace4ca8bfbcb25277a2e83a",
+         "5ace4d4abfbcb25277a2e84e"
+      ]
+   },
+   {  
+      "_id": "5ace4d58bfbcb25277a2e851",
+      "name": "Tag D.1.1",
+      "isFolder": false,
+      "parent": "5ace4d4abfbcb25277a2e84e",
+      "ancestors": [  
+         "5ace4ca8bfbcb25277a2e83a",
+         "5ace4d4abfbcb25277a2e84e"
+      ]
+   }
+]
