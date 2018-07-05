@@ -1,22 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './TagPicker.css';
 
 export class TagPicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentParent: null
+      currentParentID: null,
+      currentParentName: null
     };
   }
 
-  displayDocs (docs=this.props.tags) {
-    const parentID = this.state.currentParent;
+  displayDocs () {
+    const docs=this.props.tags;
+    const parentID = this.state.currentParentID;
     const docsToDisplay = docs.filter(doc => {
       return doc.parent === parentID;
     });
   
     return docsToDisplay.map(doc => {
       if (doc.isFolder) {
-        return <li key={doc._id} onClick={() => this.setState({currentParent: doc._id})}>{doc.name}</li>;
+        return <li key={doc._id} onClick={() => this.setState({currentParentID: doc._id, currentParentName: doc.name})}>{doc.name}</li>;
       } else {
         return <li key={doc._id} onClick={() => this.addOrRemoveSelectedTag(doc._id)}>{doc.name}</li>;
       }
@@ -24,7 +27,6 @@ export class TagPicker extends Component {
   }
 
   addOrRemoveSelectedTag (tagID) {
-    // for checking tags
     let selectedTags = [...this.props.selectedTags];
     const indexOfTag = selectedTags.indexOf(tagID);
     if (indexOfTag === -1) {
@@ -36,16 +38,36 @@ export class TagPicker extends Component {
   }
 
   goBackOneParent () {
-    const newParentFolder = this.props.tags.find(doc => {
-      return doc._id === this.state.currentParent;
+    // find doc of our current parent
+    const currentParentDoc = this.props.tags.find(doc => {
+      return doc._id === this.state.currentParentID;
     });
-    this.setState({currentParent: newParentFolder.parent});
+    // find that doc's parent's ID
+    const parentOfCurrentParentID = currentParentDoc.parent;
+
+    let parentOfCurrentParentName;
+    // if parent has no ID, name = null
+    if (parentOfCurrentParentID === null) {
+      parentOfCurrentParentName = null;
+    } else {
+      // else, find that parent's doc, and then it's name
+      const parentOfCurrentParentDoc = this.props.tags.find(doc => {
+        return parentOfCurrentParentID === doc._id;
+      });
+      parentOfCurrentParentName = parentOfCurrentParentDoc.name;
+    }
+
+    this.setState({currentParentID: parentOfCurrentParentID, currentParentName: parentOfCurrentParentName});
+    // I'm sure there's a more efficient, or at least a more clear way of going about this
+    // but I believe the structure of our data necessitates something similar to what I have here -   
+    // from our current parent, use its parent value to find that parent's doc, then display the name value (unless it's null)
   }
 
   render() {
     return (
     <div className="tag-picker">
-      {this.state.currentParent === null ? null : <button onClick={() => this.goBackOneParent()}>Back</button>}
+    <h2>{this.state.currentParentName === null ? 'Root' : this.state.currentParentName}</h2>
+      {this.state.currentParentID === null ? null : <button onClick={() => this.goBackOneParent()}>Back</button>}
       <ul>{this.displayDocs()}</ul>
     </div>
     )
