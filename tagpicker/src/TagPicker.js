@@ -23,15 +23,6 @@ export class TagPicker extends Component {
     });
   }
 
-  // findFolderChildren (folderID) {
-  //   // display all docs that have parent of folder ID
-  //   // const folderChildren = this.props.tags.filter(tag => {
-  //   //   return tag.parent === folderID;
-  //   // });
-  //   this.setState({currentParent: folderID});
-  //   // this.displayDocs(folderChildren);
-  // }
-
   addOrRemoveSelectedTag (tagID) {
     // for checking tags
     let selectedTags = [...this.props.selectedTags];
@@ -54,7 +45,7 @@ export class TagPicker extends Component {
   render() {
     return (
     <div className="tag-picker">
-      <button onClick={() => this.goBackOneParent()}>Back</button>
+      {this.state.currentParent === null ? null : <button onClick={() => this.goBackOneParent()}>Back</button>}
       <ul>{this.displayDocs()}</ul>
     </div>
     )
