@@ -8,53 +8,54 @@ export class TagPicker extends Component {
     };
   }
 
-  displayTags(tagsToDisplay=this.props.tags) {
-    // take all tags, filter them by proper parent ID
-      // map those
+  displayDocs (docs=this.props.tags) {
     const parentID = this.state.currentParent;
-    const tags = tagsToDisplay.filter(tag => {
-      return tag.parent === parentID;
+    const docsToDisplay = docs.filter(doc => {
+      return doc.parent === parentID;
     });
-
-    return tags.map(tag => {
-      return <li key={tag._id} onClick={() => this.folderOrTag(tag.isFolder, tag._id)}>{tag.name}</li>;
+  
+    return docsToDisplay.map(doc => {
+      if (doc.isFolder) {
+        return <li key={doc._id} onClick={() => this.setState({currentParent: doc._id})}>{doc.name}</li>;
+      } else {
+        return <li key={doc._id} onClick={() => this.addOrRemoveSelectedTag(doc._id)}>{doc.name}</li>;
+      }
     });
   }
 
-  folderOrTag (folder, tagID) {
-    if (folder) {
-      this.findFolderChildren(tagID);
-    } else {
-      this.addOrRemoveSelectedTag(tagID);
-    }
-  }
+  // findFolderChildren (folderID) {
+  //   // display all docs that have parent of folder ID
+  //   // const folderChildren = this.props.tags.filter(tag => {
+  //   //   return tag.parent === folderID;
+  //   // });
+  //   this.setState({currentParent: folderID});
+  //   // this.displayDocs(folderChildren);
+  // }
 
-  findFolderChildren (tagID) {
-    // display all tags that have parent of folder ID
-    const folderChildren = this.props.tags.filter(tag => {
-      return tag.parent === tagID;
-    });
-    console.log(folderChildren);
-    this.setState({currentParent: tagID});
-    this.displayTags(folderChildren);
-  }
-
-  addOrRemoveSelectedTag (tag) {
+  addOrRemoveSelectedTag (tagID) {
     // for checking tags
     let selectedTags = [...this.props.selectedTags];
-    const indexOfTag = selectedTags.indexOf(tag);
+    const indexOfTag = selectedTags.indexOf(tagID);
     if (indexOfTag === -1) {
-      selectedTags = [...selectedTags, tag];
+      selectedTags = [...selectedTags, tagID];
     } else {
       selectedTags.splice(indexOfTag, 1);
     }
     this.props.onTagSelectionChange(selectedTags);
   }
 
+  goBackOneParent () {
+    const newParentFolder = this.props.tags.find(doc => {
+      return doc._id === this.state.currentParent;
+    });
+    this.setState({currentParent: newParentFolder.parent});
+  }
+
   render() {
     return (
     <div className="tag-picker">
-      <ul>{this.displayTags()}</ul>
+      <button onClick={() => this.goBackOneParent()}>Back</button>
+      <ul>{this.displayDocs()}</ul>
     </div>
     )
   }
